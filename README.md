@@ -42,7 +42,7 @@
 
 ## 📺 演示视频
 
-[![点击观看完整演示](docs/media/poster.jpg)](docs/media/demo.mp4)
+[![点击观看完整演示](docs/media/shot-city-viewshed.jpg)](docs/media/demo.mp4)
 
 > 点击封面观看演示视频（**3 分 16 秒 · 1440×652 · H.264 · 39 MB**）。
 > 视频文件位于 [`docs/media/demo.mp4`](docs/media/demo.mp4)，可直接下载播放。
@@ -58,6 +58,27 @@
 ![微信小程序端](docs/media/miniprogram.jpg)
 
 > 小程序端代码**不在本仓库中**，此处仅作功能说明。
+
+---
+
+## 🖼️ 界面截图
+
+**① 三维场景总览** — 巡检人员与无人机标记、机场禁飞区、地表气象热力图
+
+![三维场景总览](docs/media/shot-overview.jpg)
+
+**② 城市白膜与航点可视域分析** — 白膜 3D Tiles 上叠加航点视锥与盲区，
+右下角实时给出有效监控面积 / 盲区面积（本帧为 59.61 万㎡ / 9.94 万㎡）
+
+![城市白膜与航点可视域分析](docs/media/shot-city-viewshed.jpg)
+
+**③ 气象热力图与航线联动** — 区域气象热度、当前巡航线路天气、适宜飞行研判
+
+![气象热力图与航线联动](docs/media/shot-weather-heatmap.jpg)
+
+**④ 违规车辆告警** — 无人机巡检发现地铁保护区内违规占用施工机械时的实时弹窗
+
+![违规车辆告警](docs/media/shot-violation-alert.jpg)
 
 
 ---
