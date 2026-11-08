@@ -1,0 +1,34 @@
+# ---- 依赖 / 构建产物 ----
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# ---- Cesium 运行时（由 npm run prepare:cesium 从 node_modules 复制生成）----
+public/cesium/
+
+# ---- 体积较大的三维数据（仓库不包含，需自行准备）----
+public/3dlitest2/
+
+# ---- 环境变量（保留 .env.example）----
+.env
+.env.local
+.env.*.local
+
+# ---- 编辑器 / 系统 ----
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.DS_Store
+Thumbs.db
+
+# ---- 日志 / 缓存 ----
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.cache/
+.vite/

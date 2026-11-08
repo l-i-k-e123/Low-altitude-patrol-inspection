@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="低空巡查巡检三维监管平台 — 基于 Cesium 的地铁保护区空天地一体化无人机巡查可视化系统"
+    />
+    <title>低空巡查巡检 · 地铁保护区空天地一体化三维监管平台</title>
+
+    <!-- Cesium 全部静态资源（Cesium.js / Workers / Assets / Widgets）由 scripts/copy-cesium.js
+         从 npm 包复制到 public/cesium/，因此本项目不需要 CDN，可离线部署。 -->
+    <link rel="stylesheet" href="/cesium/Widgets/widgets.css" />
+    <script src="/cesium/Cesium.js"></script>
+    <script>
+      // 告诉 Cesium 去哪里找 Workers / Assets
+      window.CESIUM_BASE_URL = '/cesium/'
+
+      // Cesium 分包版本可能把 Ion.defaultServer 置空，
+      // 导致 Ion 请求被打到相对路径（localhost/v1/assets），这里显式指回官方地址。
+      if (window.Cesium?.Ion && window.Cesium.Resource) {
+        window.Cesium.Ion.defaultServer = new window.Cesium.Resource({
+          url: 'https://api.cesium.com/',
+        })
+      }
+
+      // 固定 WGS84 椭球，保证与业务矢量数据（GeoJSON 经纬度）一致
+      if (window.Cesium?.Ellipsoid) {
+        var wgs84 = [6378137.0, 6378137.0, 6356752.3142451793]
+        window.Cesium.Ellipsoid.WGS84 = Object.freeze(
+          new window.Cesium.Ellipsoid(wgs84[0], wgs84[1], wgs84[2]),
+        )
+      }
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Microsoft YaHei', Arial, sans-serif;
+        background: #0a0a0a;
+        color: #fff;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
